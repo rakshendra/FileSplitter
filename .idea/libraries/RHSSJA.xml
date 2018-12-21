@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="RHSSJA">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RHSSJA.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
