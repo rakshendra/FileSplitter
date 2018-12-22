@@ -55,7 +55,7 @@ public class SplitterJoinerUtility {
             if (deleteParts) {
                 for (int i = 0; i < numberOfParts; i++) {
                     tempString = fileName + "." + numberOfParts + "." + (i + 1) + fileExt;
-                    File fp = new File(firstPart.getAbsolutePath(), tempString);
+                    File fp = new File(firstPart.getParent(), tempString);
                     fp.delete();
                 }
             }

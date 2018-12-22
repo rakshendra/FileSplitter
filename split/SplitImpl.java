@@ -61,7 +61,7 @@ public class SplitImpl implements Split {
             long toWrite = partSize;
             for (int partNumber = 0; partNumber < numberOfParts; partNumber++) {
                 String partName = partInitName + "." + numberOfParts + "." + (partNumber + 1) + "." + partExt;
-                try (FileOutputStream outputStream = new FileOutputStream(outputPath + partName)) {
+                try (FileOutputStream outputStream = new FileOutputStream(outputPath + "\\"+partName)) {
                     if (partNumber == numberOfParts - 1) {
                         toWrite = lastPartSize;
                     }
@@ -79,7 +79,7 @@ public class SplitImpl implements Split {
         }finally {
             if(!splitSuccessful){
                 for(String partName : partsCreated){
-                    File part = new File(outputPath + partName);
+                    File part = new File(outputPath + "\\"+partName);
                     part.delete();
                 }
             }

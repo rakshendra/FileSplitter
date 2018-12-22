@@ -18,7 +18,7 @@ class DriverClass {
             in.nextLine();
             switch (ch) {
                 case 1:
-                    System.out.print("Enter File Path : ");
+                    System.out.println("Enter File Path : ");
                     String fpath = in.nextLine();
                     System.out.println("Options:\n1.Divide in Equal parts\n2.Divide with specified File Size-->");
                     int chin = in.nextInt();
