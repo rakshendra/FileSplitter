@@ -1,7 +1,6 @@
 package main;
 
-import join.JoinerClass;
-import split.SplitterUtility;
+import split.SplitterJoinerUtility;
 
 import java.awt.*;
 import javax.swing.*;
@@ -181,12 +180,12 @@ class MainClass	extends 	JFrame
                 //System.out.println(fileName);
 				String outPath=folderAdd.getText();
 				outPath+="\\";
-                SplitterUtility splitobj;
-				String ans;
+                SplitterJoinerUtility splitobj;
+				/*String ans;
 				if(equalParts.isSelected())
 				{
 					int no_of_parts=Integer.parseInt(noOfParts.getText());
-                	splitobj=new SplitterUtility(filePath,fileName,no_of_parts,delFile.isSelected(),outPath);
+                	splitobj=new SplitterJoinerUtility(filePath,fileName,no_of_parts,delFile.isSelected(),outPath);
 					lb4.setText("STATUS : Splitting File....");
 					ans = splitobj.splitFile();
 					lb4.setText("STATUS : "+ans);
@@ -196,7 +195,7 @@ class MainClass	extends 	JFrame
 				{
 					long partsize=Long.parseLong(sizeOfPart.getText());
 					String dtype=(String)memType.getSelectedItem();
-					splitobj=new SplitterUtility(filePath,fileName,partsize,dtype,delFile.isSelected(),outPath);
+					splitobj=new SplitterJoinerUtility(filePath,fileName,partsize,dtype,delFile.isSelected(),outPath);
 					lb4.setText("STATUS : Splitting File....");
 					ans = splitobj.splitFile();
 					lb4.setText("STATUS : "+ans);
@@ -205,7 +204,7 @@ class MainClass	extends 	JFrame
 				else
 				{
 					JOptionPane.showMessageDialog(panel1, "Select all the Options!!!","RESULT", JOptionPane.INFORMATION_MESSAGE);
-				}
+				}*/
 				
             }
         });	
@@ -296,7 +295,7 @@ class MainClass	extends 	JFrame
         {
             public void actionPerformed(ActionEvent ae)
             {
-                String filePath=fileAdd.getText();
+                /*String filePath=fileAdd.getText();
                 String fileName=filePath.substring(filePath.lastIndexOf('\\')+1);
                 filePath=filePath.substring(0,filePath.lastIndexOf('\\'));
 				//System.out.println(filePath);
@@ -307,7 +306,7 @@ class MainClass	extends 	JFrame
 				lb4.setText("STATUS : Joining Files.....");
 				String ans =joinobj.joinFile();
 				lb4.setText("STATUS : "+ans);
-				JOptionPane.showMessageDialog(panel1, ans,"RESULT", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(panel1, ans,"RESULT", JOptionPane.INFORMATION_MESSAGE);*/
 				
             }
         });

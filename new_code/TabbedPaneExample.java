@@ -1,3 +1,7 @@
+package new_code;
+
+import split.SplitterJoinerUtility;
+
 import java.awt.*;
 import java.io.*;
 import java.util.*;
@@ -173,21 +177,21 @@ class TabbedPaneExample		extends 	JFrame
                 //System.out.println(fileName);
 				String outPath=folderAdd.getText();
 				outPath+="\\";
-                SplitterClass splitobj;
+                SplitterJoinerUtility splitobj = new SplitterJoinerUtility();
 				String ans;
 				if(equalParts.isSelected())
 				{
 					int no_of_parts=Integer.parseInt(noOfParts.getText());
-                	splitobj=new SplitterClass(filePath,fileName,no_of_parts,delFile.isSelected(),outPath);
-					ans = splitobj.splitFile();
+                	//splitobj=new SplitterClass(filePath,fileName,no_of_parts,delFile.isSelected(),outPath);
+					ans = splitobj.splitFile(filePath, no_of_parts, 0, true);
 					JOptionPane.showMessageDialog(panel1, ans,"RESULT", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else if(specifiedSize.isSelected())
 				{
 					long partsize=Long.parseLong(sizeOfPart.getText());
 					String dtype=(String)memType.getSelectedItem();
-					splitobj=new SplitterClass(filePath,fileName,partsize,dtype,delFile.isSelected(),outPath);
-					ans = splitobj.splitFile();
+					//splitobj=new SplitterClass(filePath,fileName,partsize,dtype,delFile.isSelected(),outPath);
+					ans = splitobj.splitFile(filePath, 0, partsize, false);
 					JOptionPane.showMessageDialog(panel1, ans,"RESULT", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else
@@ -287,8 +291,9 @@ class TabbedPaneExample		extends 	JFrame
                 //System.out.println(fileName);
 				String outPath=folderAdd.getText();
 				outPath+="\\";
-                JoinerClass joinobj=new JoinerClass(filePath,fileName,outPath,delFile.isSelected());
-				String ans =joinobj.joinFile();
+                //JoinerClass joinobj=new JoinerClass(filePath,fileName,outPath,delFile.isSelected());
+				SplitterJoinerUtility joinerUtility = new SplitterJoinerUtility();
+				String ans =joinerUtility.joinFiles(filePath, delFile.isSelected());
 				JOptionPane.showMessageDialog(panel1, ans,"RESULT", JOptionPane.INFORMATION_MESSAGE);
 				
             }
