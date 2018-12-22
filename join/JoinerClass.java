@@ -1,6 +1,8 @@
+package join;
+
 import java.io.*;
 import java.util.*;
-class JoinerClass
+public class JoinerClass
 {
 	String filePath;
 	String firstPartName;

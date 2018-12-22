@@ -1,4 +1,8 @@
-import java.io.*;
+package main;
+
+import join.JoinerClass;
+import split.SplitterUtility;
+
 import java.util.*;
 
 class DriverClass
@@ -28,7 +32,7 @@ class DriverClass
 						fpath=in.nextLine();
 						System.out.print("Enter File Name : ");
 						fname=in.nextLine();
-						SplitterClass splitobj;
+						SplitterUtility splitobj;
 						System.out.println("Options:\n1.Divide in Equal parts\n2.Divide with specified File Size-->");
 						int chin=in.nextInt();
 						//in.nextLine();
@@ -36,7 +40,7 @@ class DriverClass
 						{
 							case 1:	System.out.print("Enter number of parts : ");
 									no_of_parts=in.nextInt();
-									splitobj=new SplitterClass(fpath,fname,no_of_parts);
+									splitobj=new SplitterUtility(fpath,fname,no_of_parts);
 									splitobj.splitFile();
 									break;
 							case 2: in.nextLine();
@@ -45,7 +49,7 @@ class DriverClass
 									System.out.print("Enter size of each part(<=500MB) : ");
 									manual_size=in.nextLong();
 									
-									splitobj=new SplitterClass(fpath,fname,manual_size,dtype);
+									splitobj=new SplitterUtility(fpath,fname,manual_size,dtype);
 									splitobj.splitFile();
 									break;
 							default:System.out.println("Wrong Choice!!!!!");

@@ -1,6 +1,9 @@
+package main;
+
+import join.JoinerClass;
+import split.SplitterUtility;
+
 import java.awt.*;
-import java.io.*;
-import java.util.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.io.File;
@@ -178,12 +181,12 @@ class MainClass	extends 	JFrame
                 //System.out.println(fileName);
 				String outPath=folderAdd.getText();
 				outPath+="\\";
-                SplitterClass splitobj;
+                SplitterUtility splitobj;
 				String ans;
 				if(equalParts.isSelected())
 				{
 					int no_of_parts=Integer.parseInt(noOfParts.getText());
-                	splitobj=new SplitterClass(filePath,fileName,no_of_parts,delFile.isSelected(),outPath);
+                	splitobj=new SplitterUtility(filePath,fileName,no_of_parts,delFile.isSelected(),outPath);
 					lb4.setText("STATUS : Splitting File....");
 					ans = splitobj.splitFile();
 					lb4.setText("STATUS : "+ans);
@@ -193,7 +196,7 @@ class MainClass	extends 	JFrame
 				{
 					long partsize=Long.parseLong(sizeOfPart.getText());
 					String dtype=(String)memType.getSelectedItem();
-					splitobj=new SplitterClass(filePath,fileName,partsize,dtype,delFile.isSelected(),outPath);
+					splitobj=new SplitterUtility(filePath,fileName,partsize,dtype,delFile.isSelected(),outPath);
 					lb4.setText("STATUS : Splitting File....");
 					ans = splitobj.splitFile();
 					lb4.setText("STATUS : "+ans);
